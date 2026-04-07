@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
+import logo from "../media/Gemini_Generated_Image_isweopisweopiswe.png";
 
 export default function Navbar() {
     const { pathname } = useLocation();
@@ -23,7 +24,12 @@ export default function Navbar() {
 
             {/* Sidebar en desktop */}
             <nav className="hidden md:flex fixed top-0 left-0 h-screen w-56 bg-gray-900 border-r border-gray-800 flex-col py-8 px-4 z-50">
-                <h1 className="text-orange-500 font-bold text-xl mb-10 px-2">Antigravity</h1>
+                <div className="flex flex-col items-center mb-10 gap-3">
+                    <img src={logo} alt="Logo" className="w-24 h-24 object-contain rounded-full shadow-lg border-2 border-gray-800 bg-gray-800" />
+                    <h1 className="text-white font-bold text-lg text-center tracking-wide leading-tight">
+                        Gonzalo Almiron
+                    </h1>
+                </div>
                 <div className="flex flex-col gap-1 flex-1">
                     {links.map((l) => (
                         <Link
