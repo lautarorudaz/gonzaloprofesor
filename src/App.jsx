@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Inicio from "./pages/Inicio";
 import Ejercicios from "./pages/Ejercicios";
 import Rutinas from "./pages/Rutinas";
+import CrearRutina from "./pages/CrearRutina";
 
 function RutaPrivada({ children }) {
   const { profesor } = useAuth();
@@ -19,6 +20,8 @@ export default function App() {
           <Route path="/" element={<RutaPrivada><Inicio /></RutaPrivada>} />
           <Route path="/ejercicios" element={<RutaPrivada><Ejercicios /></RutaPrivada>} />
           <Route path="/rutinas" element={<RutaPrivada><Rutinas /></RutaPrivada>} />
+          <Route path="/rutinas/nueva" element={<RutaPrivada><CrearRutina /></RutaPrivada>} />
+          <Route path="/rutinas/:id" element={<RutaPrivada><CrearRutina /></RutaPrivada>} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
